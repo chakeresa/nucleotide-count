@@ -30,5 +30,8 @@ defmodule NucleotideCount do
   """
   @spec histogram(charlist()) :: map()
   def histogram(strand) do
+    'ATCG'
+    |> Enum.map(fn char -> { char, count(strand, char) } end)
+    |> Map.new
   end
 end
